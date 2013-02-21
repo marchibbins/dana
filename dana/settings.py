@@ -55,7 +55,7 @@ MANAGERS = ADMINS
 ROOT_URLCONF = 'dana.urls'
 WSGI_APPLICATION = 'dana.wsgi.application'
 
-SECRET_KEY = env_var('SECRET_KEY', 'qubr%87_zs$=(sd)a+l*i!js%h#2o=8t72caann1%')
+SECRET_KEY = env_var('SECRET_KEY', '')
 
 TIME_ZONE = env_var('TIME_ZONE', 'Europe/London')
 LANGUAGE_CODE = env_var('LANGUAGE_CODE', 'en-gb')
