@@ -49,7 +49,7 @@ Honcho adds the following environment variables, update ``.env`` and ``dana/sett
 
 [See Django settings documentation](https://docs.djangoproject.com/en/1.4/ref/settings/)
 
-**Note:** Default Django values are defined in ``dana/settings.py`` so you don't need to duplicate these in your ``.env`` if you want to keep it minimal.
+**Note:** Django defaults are defined in ``dana/settings.py``, so you don't need to duplicate these in your ``.env`` if you want to keep it minimal.
 
 #### Further reading:
 

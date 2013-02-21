@@ -22,6 +22,10 @@ ALLOWED_HOSTS = ['*']
 STATIC_ROOT = join(SITE_ROOT, 'static')
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = (
+    join(PROJECT_ROOT, 'static'),
+)
+
 # Media
 MEDIA_ROOT = join(SITE_ROOT, 'media')
 MEDIA_URL = '/media/'
@@ -71,7 +75,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.admin',
+    # 'django.contrib.admin',
 )
 
 # Middleware
