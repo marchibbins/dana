@@ -1,6 +1,6 @@
 ## Dana
 
-A basic [Twelve-Factor](http://www.12factor.net/) Django application.
+A simple [Twelve-Factor](http://www.12factor.net/) Django application.
 
 ### Dependencies
 
@@ -12,13 +12,13 @@ A basic [Twelve-Factor](http://www.12factor.net/) Django application.
 
 1. Install requirements (use [virtualenv](https://pypi.python.org/pypi/virtualenv))
 
-    $ pip install -r requirements.txt
+        $ pip install -r requirements.txt
 
 2. Configure your application using the .env file
 
 3. Run with Honcho
 
-    $ honcho start
+        $ honcho start
 
 Further reading:
 
