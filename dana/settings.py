@@ -1,18 +1,21 @@
 from os.path import abspath, join, dirname
-import os
+from os import environ
 
 # Environment variables
 def env_var(key, default=None):
-    val = os.environ.get(key, default)
+    val = environ.get(key, default)
     if val == 'True':
         val = True
     elif val == 'False':
         val = False
     return val
 
-# Site
-SITE_ID = 1
+# Paths
 SITE_ROOT = abspath(join(dirname(__file__), '..'))
+PROJECT_ROOT = abspath(dirname(__file__))
+
+# Site
+SITE_ID = env_var('SITE_ID', 1)
 ALLOWED_HOSTS = ['*']
 
 # Static
@@ -22,9 +25,6 @@ STATIC_URL = '/static/'
 # Media
 MEDIA_ROOT = join(SITE_ROOT, 'media')
 MEDIA_URL = '/media/'
-
-# Project
-PROJECT_ROOT = abspath(dirname(__file__))
 
 # Debugging
 DEBUG = env_var('DEBUG', False)
@@ -37,12 +37,12 @@ TEMPLATE_DIRS = (
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
+        'ENGINE': env_var('DB_ENGINE', ''),
+        'NAME': env_var('DB_NAME', ''),
+        'USER': env_var('DB_USER', ''),
+        'PASSWORD': env_var('DB_PASSWORD', ''),
+        'HOST': env_var('DB_HOST', ''),
+        'PORT': env_var('DB_PORT', ''),
     }
 }
 
@@ -54,13 +54,14 @@ MANAGERS = ADMINS
 
 ROOT_URLCONF = 'dana.urls'
 WSGI_APPLICATION = 'dana.wsgi.application'
-SECRET_KEY = '$q(7&amp;*n=bs=z!^g223$1wdua@bi#r(4lj3#98wcgy0*i4)j371'
 
-TIME_ZONE = 'Europe/London'
-LANGUAGE_CODE = 'en-gb'
-USE_I18N = True
-USE_L10N = True
-USE_TZ = True
+SECRET_KEY = env_var('SECRET_KEY', 'qubr%87_zs$=(sd)a+l*i!js%h#2o=8t72caann1%')
+
+TIME_ZONE = env_var('TIME_ZONE', 'Europe/London')
+LANGUAGE_CODE = env_var('LANGUAGE_CODE', 'en-gb')
+USE_I18N = env_var('USE_I18N', False)
+USE_L10N = env_var('USE_L10N', True)
+USE_TZ = env_var('USE_TZ', True)
 
 # Apps
 INSTALLED_APPS = (
