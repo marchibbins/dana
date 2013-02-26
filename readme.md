@@ -51,6 +51,12 @@ Honcho adds the following environment variables, update ``.env`` and ``dana/sett
 
 **Note:** Django defaults are defined in ``dana/settings.py``, so you don't need to duplicate these in your ``.env`` if you want to keep it minimal.
 
+#### Local Development
+
+[The twelve-factor developer resists the urge to use different backing services between development and production](http://www.12factor.net/dev-prod-parity), however the ``.env`` file is also used to specify the main web process command which allows, for example, to run with Django's built-in server with ``autoreload``, which Gunicorn [does not support](https://github.com/benoitc/gunicorn/issues/154).
+
+**Note:** The sample ``.env`` declares the process twice purely to demonstrate this - here, Gunicorn wins out.
+
 #### Further reading:
 
 - [The Twelve-Factor App](http://www.12factor.net/)
